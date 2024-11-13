@@ -1,28 +1,27 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
+import AboutMe from "@/components/AboutMe.astro";
+// import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+// import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
 ---
 
 <Layout
-  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Porfolio de Daniel - Desarrollador Web"
+  description="Contrata a Daniel para crear tu aplicación web o móvil. Desarrollador Web. Especializado en crear aplicaciones únicas."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+    <SectionContainer class="py-16 md:py-36" id="principal">
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
-    <SectionContainer id="experiencia">
+  </main>
+  <div class="space-y-24">
+    <!-- <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
@@ -30,7 +29,7 @@ import Hero from "@/components/Hero.astro"
         Experiencia laboral
       </h2>
       <Experience />
-    </SectionContainer>
+    </SectionContainer> -->
 
     <SectionContainer id="proyectos">
       <h2
@@ -52,5 +51,4 @@ import Hero from "@/components/Hero.astro"
       <AboutMe />
     </SectionContainer>
   </div>
-  </main>
 </Layout>

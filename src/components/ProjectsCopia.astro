@@ -18,6 +18,8 @@ import LinkButton from "./LinkButton.astro";
 //   },
 // };
 
+const TAGS = {};
+
 const PROJECTS = [
   {
     title: "San Juan Opico Web",
@@ -25,6 +27,8 @@ const PROJECTS = [
     link: "https://san-juan-opico.vercel.app/",
     github: "https://github.com/EduardYan/san-juan-opico-web",
     image: "/projects/san-juan-opico.webp",
+    // tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [],
   },
   {
     title: "AdventJS - Retos de programación con JavaScript y TypeScript",
@@ -32,13 +36,15 @@ const PROJECTS = [
       "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
     link: "https://adventjs.dev",
     image: "/projects/adventjs.webp",
+    // tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, link, github }) => (
+    PROJECTS.map(({ image, title, tags, description, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -56,6 +62,19 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
             <div class="mt-2 text-gray-700 dark:text-gray-400">
               {description}
             </div>
